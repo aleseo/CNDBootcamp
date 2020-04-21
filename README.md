@@ -2,10 +2,10 @@ CND Bootcamp Project
 Group 1: Alex Seo, Emily Zhong, Lucas Nicolois, Savianno Iglesias
 
 
-PORTS:
-8080 : frontend
-8082 : events
-#### : users
+PORTS:  
+8080 : frontend  
+8082 : events  
+\#\#\#\# : users  
 
 To set up firebase:
 1. go to https://console.firebase.google.com/
