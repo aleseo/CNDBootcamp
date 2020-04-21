@@ -16,11 +16,11 @@ app.use(bodyParser.json());
 
 // firebase admin 
 var admin = require('firebase-admin');
-var serviceAccount = require("./dtc-attendee111-firebase-adminsdk-wo2ow-b09d644ad5.json");
+var serviceAccount = require("./firebase-credentials.json"); // *RENAME credential file downloaded from firebase
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://dtc-attendee111.firebaseio.com"
+  databaseURL: "https://dtc-attendee111.firebaseio.com" // * unique to firebase instance
 });
 
 /* if on google cloud
