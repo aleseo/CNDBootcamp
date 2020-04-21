@@ -31,7 +31,6 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-
 // mock events data - for a real solution this data should be coming 
 // from a cloud data store
 const mockEvents = {
@@ -43,7 +42,6 @@ const mockEvents = {
 
 // FIRESTORE
 // read data in
-
 db.collection('events').get().then(col => {
     col.forEach(doc =>{
         console.log(doc.id, '=>', doc.data());
@@ -79,10 +77,14 @@ app.post('/event', (req, res) => {
     const ev = { 
         title: req.body.title, 
         description: req.body.description,
-        id : mockEvents.events.length + 1
      }
     // add to the mock array
     mockEvents.events.push(ev);
+
+    console.log("adding to firebase: ", ev);
+    // add to firebase
+    db.collection('events').add(ev);
+
     // return the complete array
     res.json(mockEvents);
 });
